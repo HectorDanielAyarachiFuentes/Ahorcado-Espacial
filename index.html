@@ -360,6 +360,14 @@
             const soundOff = this.querySelector('.sound-off');
             soundOn.style.display = soundEnabled ? 'block' : 'none';
             soundOff.style.display = soundEnabled ? 'none' : 'block';
+            
+            // Controlar la música de fondo
+            const musicaFondo = document.getElementById('musicaFondo');
+            if (soundEnabled) {
+                if (musicaActivada) musicaFondo.play();
+            } else {
+                musicaFondo.pause();
+            }
         });
 
         function mostrarPalabra() {
